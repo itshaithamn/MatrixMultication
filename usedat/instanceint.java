@@ -1,41 +1,65 @@
 package usedat;
-import java.util.Arrays;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class instanceint{
     int c, b;
-    public void mat12(int a){
+    public void mat12(int i) throws IOException{
         Random rand = new Random();
-
-        c = rand.nextInt(10);
-        b = rand.nextInt(10);
-        int[][] mat1 = new int[a][b];
-        int[][] mat2 = new int[a][c];
-        //create random b and c values
-        int j;
-
+        c = rand.nextInt(1, 10);
+        b = rand.nextInt(1, 10);
+        
+        int[][] mat1 = new int[i][i];
+        int[][] mat2 = new int[i][b];
+        int[][] mat3 = new int[i][b];
+        
+        int a, k, j;
         for (a = 0; a<mat1.length; a++){
             for(j = 0; j < mat1[a].length; j++){
-                mat1[a][j] = rand.nextInt(10);
+                mat1[a][j] = rand.nextInt(1, 10);
             }
         }
+        
 
-        for (a = 0; a<mat2.length; a++){
+        for (a = 0; a <mat2.length; a++){
             for(j = 0; j < mat2[a].length; j++){
-                mat2[a][j] = rand.nextInt(10);
+                mat2[a][j] = rand.nextInt(1,10);
             }
         }
 
-        System.out.println("Matrix 1: ");
-        for(a=0; a<mat1.length; a++){
-            System.out.println(Arrays.toString(mat1[a]));
+        for (a = 0; a<mat3.length; a++){
+            for (j = 0; j<mat3[a].length; j++){
+                mat3[a][j] = 0;
+                for (k = 0; k<mat1[a].length; k++){
+                    mat3[a][j] += mat1[a][k] * mat2[k][j];
+                }
+            }
         }
+        //Above segements have been compelted 1.24.24 2:35, DO NOT TOUCH
 
-        System.out.println("Matrix 2: ");
-        for(a=0; a<mat2.length; a++){
-            System.out.println(Arrays.toString(mat2[a]));
+        //Next task is to add matrix 1 and 2 to file matrix1.txt and matrix2.txt
+        String[] allMatrices = {"matrix1.txt", "matrix2.txt", "matrix3.txt"};
+
+        for(i = 0; i < allMatrices.length; i++){
+            FileWriter writer = new FileWriter(allMatrices[i]);
+            BufferedWriter bw = new BufferedWriter(writer);
+
+            int [][] currentMatrix = i == 0 ? mat1 : i == 1 ? mat2 : mat3;
+
+            for(a=0; a<currentMatrix.length; a++){
+                for(j=0; j<currentMatrix[a].length; j++){
+                     bw.write("%d".formatted(currentMatrix[a][j]));
+                     if(j != currentMatrix[a].length -1){
+                         bw.write(" ");
+                     }
+                }
+                if(a != currentMatrix.length - 1){
+                    bw.write("\n");
+                }
+            }
+            bw.close();
         }
-
-        //include in a return variable of mat3 (matrix 3)
     }
 }

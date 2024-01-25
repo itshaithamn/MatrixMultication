@@ -1,8 +1,9 @@
 package usedat;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class userdata{
-    public void data(String[] userString){
+    public void data(String[] userString) throws IOException{
         Scanner userin = new Scanner(System.in);
         System.out.println("Please enter in 2 files or an integer to generate matrices: ");
 
