@@ -17,16 +17,18 @@ public class userdata{
             String userLine = userin.nextLine();
             userString = userLine.split(" ");
             switch (userString[0]){
-                case "matrix1":
+                case "matrix1.txt":
                     switch(userString[1]){
-                        case "matrix2":
-                            System.out.println("First enter");
+                        case "matrix2.txt":
+                            instancestr intStr = new instancestr();
+                            intStr.matIn(userString);
                     }
                     break;
-                case "matrix2":
+                case "matrix2.txt":
                     switch(userString[1]){
-                        case "matrix1":
-                            System.out.println("Second enter");
+                        case "matrix1.txt":
+                            instancestr intStr = new instancestr();
+                            intStr.matIn(userString);
                     }
                     break;
                 default:
@@ -34,6 +36,6 @@ public class userdata{
                     System.out.println("Invalid input");
             } 
         }
-        userin.close(); 
+        userin.close();
     } 
 }
