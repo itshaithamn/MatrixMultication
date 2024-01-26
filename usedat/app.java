@@ -1,5 +1,4 @@
-import usedat.userdata;
-
+package usedat;
 public class app {
     public static void main(String[] args) throws Exception{
        userdata userin = new userdata();

@@ -37,9 +37,7 @@ public class instanceint{
                 }
             }
         }
-        //Above segements have been compelted 1.24.24 2:35, DO NOT TOUCH
 
-        //Next task is to add matrix 1 and 2 to file matrix1.txt and matrix2.txt
         String[] allMatrices = {"matrix1.txt", "matrix2.txt", "matrix3.txt"};
 
         for(i = 0; i < allMatrices.length; i++){
