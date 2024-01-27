@@ -50,7 +50,7 @@ public class instanceint{
                 for(j=0; j<currentMatrix[a].length; j++){
                      bw.write("%d".formatted(currentMatrix[a][j]));
                      if(j != currentMatrix[a].length -1){
-                         bw.write(" ");
+                        bw.write(" ");
                      }
                 }
                 if(a != currentMatrix.length - 1){
