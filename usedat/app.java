@@ -7,4 +7,4 @@ public class app {
 
 }
 
-//check for computation speed
+//check for computation speed (not complete)

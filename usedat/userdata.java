@@ -11,8 +11,6 @@ public class userdata{
             int userInt = userin.nextInt();
             instanceint intMat = new instanceint();
             intMat.mat12(userInt);
-            //class that does random calculations with i as row in mat1 and column in mat2
-            //i might need to refer to an entirely different object for this one
         }else{
             String userLine = userin.nextLine();
             userString = userLine.split(" ");
