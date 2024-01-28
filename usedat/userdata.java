@@ -43,36 +43,7 @@ public class userdata{
             }
             reader.close();
 
-            BufferedReader reader2 = new BufferedReader(new FileReader("matrix1.txt"));
-            String line2;
-            int rows2 = 0;
-            int cols2 = 0;
-        
-            while((line2 = reader2.readLine()) != null){
-                String[] elements = line2.split(" ");
-                cols2 = elements.length;
-                rows2++;
-            }
-
-            reader2.close();
-            
-            int matr;
-            if (rows > rows2) {
-                matr = rows;
-            } else {
-                matr = rows2;
-            }
-            
-            int matc;
-            if (cols > cols2) {
-                matc = cols;
-            } else {
-                matc = cols2;
-            }
-            
-            System.out.println("Rows and cols: " + rows + " " + cols + " " + rows2 + " " + cols2 + " " + matr + " " + matc);
-
-            int[][] mat3 = new int[matr][matc];
+            int[][] mat3 = new int[rows][cols];
 
             for (int i = 0; i < mat3.length; i++){
                 for (int j = 0; j < mat3[i].length; j++){
